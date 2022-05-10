@@ -1,0 +1,11 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:7000/eureka/,http://server2:7001/eureka/
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7006
+spring:
+  application:
+    name: eureka-custmer-feign

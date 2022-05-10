@@ -1,0 +1,23 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: eureka-server1
+eureka:
+  client:
+#    自己是中心，所以是false
+    register-with-eureka: false
+#    是否从中心取东西,因为自己是中心，所以是false
+    fetch-registry: false
+    service-url:
+#      http://主机名：端口号/eureka
+      defaultZone: http://server2:7001/eureka/
+  instance:
+    hostname: server1
+#    每隔20秒向中心发送信息，告诉中心自己还在
+    lease-renewal-interval-in-seconds: 20
+#    中心每隔90秒看看周围谁下线了
+    lease-expiration-duration-in-seconds: 120
+  server:
+#    关闭自我保护
+    enable-self-preservation: false
