@@ -1,0 +1,13 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: springcloud-config-server
+  cloud:
+    config:
+      server:
+        get:
+          uri: https://github.com/lizhihao000/java.git
+          search-paths: /demo-config-server/src/main/resources/
+          username: 2710936957@qq.com
+          password: Lizhihao789
