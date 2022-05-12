@@ -49,7 +49,7 @@ public class CustmerController {
     public String hello(@RequestParam(value = "sleep_seconds")int sleep_seconds ) throws  InterruptedException{
         ServiceInstance serviceInstance=loadBalancerClient.choose("eureka-provider1");
         String url="http://"+serviceInstance.getHost()+":"+serviceInstance.getPort()+"/user/sayHi?sleep_seconds="+sleep_seconds;
-        System.out.println(url);
+//        System.out.println(url);
         RestTemplate restTemplate=new RestTemplate();
         return restTemplate.getForObject(url,String.class);
     }
